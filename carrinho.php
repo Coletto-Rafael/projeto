@@ -10,19 +10,18 @@ if(!isset($_SESSION['carrinho'])) {
 if(isset($_GET['acao'])) {
 
     # Adiciona o produto
-    if($_GET['acao'] == 'add') {    
+    if($_GET['acao'] == 'add') {
         $id = intval($_POST['id']);
         if(!isset($_SESSION['carrinho'][$id])) {
             $_SESSION['carrinho'][$id] = 1;
         } else {
             $_SESSION['carrinho'][$id] += 1;
         }
-        var_dump($_SESSION['carrinho']);
-        echo "<br><br>";
+        
         header("Location: cart.php");
         die();
     }
-    
+
     # Remove o produto
     if($_GET['acao'] == 'del') {
         $id = intval($_GET['id']);
@@ -32,7 +31,7 @@ if(isset($_GET['acao'])) {
         header("Location: cart.php");
         die();
     }
-    
+
     # Altera quantidade
     if($_GET['acao'] == 'atu') {
         if(is_array($_POST['prod'])) {

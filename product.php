@@ -1,30 +1,42 @@
-<?php
-  session_start();
-  include 'cabecalho.php';
-  if(isset($_SESSION['id'])) {
-    $prod = $_SESSION['id'];
+<!DOCTYPE html>
+    <?php include 'cabecalho.php';
+    if(isset($_SESSION['id'])) {
+        $prod = $_SESSION['id'];
 
 
-} else {
-    $_SESSION['msg'] = false;
-    header:("Location: index.php");
-}
+    } else {
+        $_SESSION['msg'] = false;
+        header:("Location: index.php");
+    }
 
- ?>
+     ?>
 
-<section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">E-COMMERCE PRODUCT</h1>
-        <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500...</p>
-    </div>
-</section>
+<html lang="pt">
+    <head>
+        <!-- Site meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>WEB TECNOLOGIA</title>
+        <!-- CSS -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+	<script src='jquery.zoom.js'></script>
+
+    </head>
+    <body>
+        <!--container-->
+
 <div class="container">
     <div class="row">
         <div class="col">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="category.html">Category</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="cart.php">Category</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Product</li>
                 </ol>
             </nav>
@@ -35,19 +47,19 @@
     <div class="row">
         <!-- Image -->
         <div class="col-12 col-lg-6">
-            <div class="card bg-light mb-3">
+            <div class="card bg-light mb-3 pb-1">
                 <div class="card-body">
-                    <a href="" data-toggle="modal" data-target="#productModal">
-                        <img id="product_photo" data-zoom-image="img/cadeira_large.jpg" width="800" height="800" class="img-fluid" src="<?="uploads" . DIRECTORY_SEPARATOR . $prod['foto'] ?>" />
+                  <a href="" data-toggle="modal" data-target="#productModal">
+                      <img id="product_photo" data-zoom-image="img/cadeira_large.jpg" width="800" height="800" class="img-fluid" src="<?="uploads" . DIRECTORY_SEPARATOR . $prod['foto'] ?>" />
 
-                    </a>
+                  </a>
                 </div>
             </div>
         </div>
 
         <!-- Add to cart -->
         <div class="col-12 col-lg-6 add_to_cart_block">
-            <div class="card bg-light mb-3">
+            <div class="card bg-light mb-3 pb-4">
                 <div class="card-body">
                     <p class="price"><?= $prod['preco']?></p>
 
@@ -62,25 +74,25 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Quantity :</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <button type="submit" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
-                                <div class="input-group-append">
-                                    <button type="submit" formaction="carrinho.php?acao=atu" formmethod="post" name="id" value="<?=$prod['id'] ?>" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                            <button type="submit" formaction="carrinho.php?acao=add" formmethod="post" name="id" value="<?=$prod['id'] ?>" class="btn btn-success btn-lg btn-block text-uppercase">
-                            <i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho
-                        </button>
-                    </form>
+                          <label>Quantity :</label>
+                          <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                  <button type="submit" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                      <i class="fa fa-minus"></i>
+                                  </button>
+                              </div>
+                              <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
+                              <div class="input-group-append">
+                                  <button type="submit" formaction="carrinho.php?acao=atu" formmethod="post" name="id" value="<?=$prod['id'] ?>" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                      <i class="fa fa-plus"></i>
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                          <button type="submit" formaction="carrinho.php?acao=add" formmethod="post" name="id" value="<?=$prod['id'] ?>" class="btn btn-success btn-lg btn-block text-uppercase">
+                          <i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho
+                      </button>
+                  </form>
                     <div class="product_rassurance">
                         <ul class="list-inline">
                             <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br/>Fast delivery</li>
@@ -98,9 +110,7 @@
                         (4/5)
                         <a class="pull-right" href="#reviews">View all reviews</a>
                     </div>
-                    <div class="datasheet p-3 mb-2 bg-info text-white">
-                        <a href="" class="text-white"><i class="fa fa-file-text"></i> Download DataSheet</a>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -110,20 +120,19 @@
         <!-- Description -->
         <div class="col-12">
             <div class="card border-light mb-3">
-                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-align-justify"></i> Description</div>
+                <div class="card-header bg-primary text-uppercase"><i class="fa fa-align-justify"></i> Descrição</div>
                 <div class="card-body">
                     <p class="card-text">
-                    <?= $prod['descricao'] ?>
-                    </p>
-
+                        <?= $prod['descricao'] ?>
+                      </p>
                 </div>
             </div>
         </div>
 
         <!-- Reviews -->
-        <div class="col-12" id="reviews">
+        <div class="col-12 " id="reviews">
             <div class="card border-light mb-3">
-                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-comment"></i> Reviews</div>
+                <div class="card-header bg-primary text-uppercase"><i class="fa fa-comment"></i> Comentarios</div>
                 <div class="card-body">
                     <div class="review">
                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
@@ -160,57 +169,9 @@
         </div>
     </div>
 </div>
-<!-- Footer -->
-        <footer class="text-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-lg-4 col-xl-3">
-                        <h5>Central de Atendimento</h5>
-                        <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
-                        <p class="mb-0">
-                            Central de Atendimento Grande São Paulo (11) 3065-7200 Outras Localidades 0800-754-4000 Horário de atendimento das 8h às 20h, de segunda a sábado (exceto feriados)
-                        </p>
-                    </div>
 
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
-                        <h5>Serviços</h5>
-                        <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
-                        <ul class="list-unstyled">
-                            <li><a href="">Assistencia Técnica</a></li>
-                            <li><a href="">Garantia Estendida</a></li>
-                            <li><a href="">Progama de afiliados</a></li>
-                        </ul>
-                    </div>
+<?php include 'rodape.php'; ?>
 
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
-                        <h5>Institucional</h5>
-                        <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
-                        <ul class="list-unstyled">
-                            <li><a href="">Política de venda</a></li>
-                            <li><a href="">Relações com investidores</a></li>
-                            <li><a href="">Eventos</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4 col-lg-3 col-xl-3">
-                        <h5>Contato</h5>
-                        <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-home mr-2"></i> Web Tecnologia</li>
-                            <li><i class="fa fa-envelope mr-2"></i> webtecnologia@gmail.com.br</li>
-                            <li><i class="fa fa-phone mr-2"></i> (21) 2518-2050</li>
-                            <li><i class="fa fa-print mr-2"></i> (21) 2618-2656</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 copyright mt-3">
-                        <p class="float-left">
-                            <a href="#"></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-<!-- JS -->
 <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" type="text/javascript"></script>
@@ -242,5 +203,3 @@
         cursor: "crosshair"
     });
 </script>
-</body>
-</html>

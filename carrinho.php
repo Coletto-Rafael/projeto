@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+include_once 'cabecalho.php';
 
 # Verifica se existe a sessão de carrinho, caso não exista é criada
 if(!isset($_SESSION['carrinho'])) {
@@ -17,7 +16,7 @@ if(isset($_GET['acao'])) {
         } else {
             $_SESSION['carrinho'][$id] += 1;
         }
-        
+
         header("Location: cart.php");
         die();
     }

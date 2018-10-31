@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 Release Notes for Simple Ecommerce Theme for Bootstrap 4
 -----------------------------------
 # v1.0.0 - (2018-01-18)
 - First Commit
-=======
-Release Notes for Simple Ecommerce Theme for Bootstrap 4
------------------------------------
-# v1.0.0 - (2018-01-18)
-- First Commit
->>>>>>> 28f3c11f692e6c0a4506a8fcef1682a6856a4f89

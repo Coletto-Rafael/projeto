@@ -1,0 +1,16 @@
+{
+    "name": "senac/projetofinal",
+    "description": "projeto final do senac prog web",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Rafael Coletto",
+            "email": "coletto.rafael@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "gargron/fileupload": "~1.4.0"
+    }
+}

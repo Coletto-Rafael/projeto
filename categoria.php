@@ -1,21 +1,12 @@
-<?php
-  session_start();
-  include 'cabecalho.php';
- ?>
+<?php include 'cabecalho.php'; ?>
 
-<section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">WEB TECNOLOGIA</h1>
-        <p class="lead text-white mb-0">Os melhores celulares e tecnologia, com os menores preços</p>
-    </div>
-</section>
 <div class="container">
-    <div class="row">
+    <div class="row mt-4">
         <div class="col">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="category.html">CategoRIA</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="categoria.php">Categoria</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Sub-categoria</li>
                 </ol>
             </nav>
@@ -26,22 +17,23 @@
     <div class="row">
         <div class="col-12 col-sm-3">
             <div class="card bg-light mb-3">
-                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+                <div class="card-header bg-primary text-uppercase"><i class="fa fa-list"></i> Categoria</div>
                 <ul class="list-group category_block">
-                    <li class="list-group-item"><a href="category.html">Cras justo odio</a></li>
-                    <li class="list-group-item"><a href="category.html">Dapibus ac facilisis in</a></li>
-                    <li class="list-group-item"><a href="category.html">Morbi leo risus</a></li>
-                    <li class="list-group-item"><a href="category.html">Porta ac consectetur ac</a></li>
-                    <li class="list-group-item"><a href="category.html">Vestibulum at eros</a></li>
+                    <li class="list-group-item"><a href="category.php">Cras justo odio</a></li>
+                    <li class="list-group-item"><a href="category.php">Dapibus ac facilisis in</a></li>
+                    <li class="list-group-item"><a href="category.php">Morbi leo risus</a></li>
+                    <li class="list-group-item"><a href="category.php">Porta ac consectetur ac</a></li>
+                    <li class="list-group-item"><a href="category.php">Vestibulum at eros</a></li>
                 </ul>
             </div>
+
             <div class="card bg-light mb-3">
-                <div class="card-header bg-success text-white text-uppercase">Last product</div>
+                <div class="card-header bg-primary text-uppercase">Último produto</div>
                 <div class="card-body">
-                    <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
+                    <img class="img-fluid" src="https://dummyimage.com/400x400/55595c/fff" />
                     <h5 class="card-title">Product title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <p class="bloc_left_price">99.00 $</p>
+                    <p class="bloc_left_price">R$ 99.00</p>
                 </div>
             </div>
         </div>

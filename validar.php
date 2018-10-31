@@ -176,8 +176,21 @@ function validarNumeroEndereco($num_endereco) {
     return $matches;
 }
 
+/* function validarCidade($cidade){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, "https://servicodados.ibge.gov.br/api/v1/localidades/municipios");
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array( 'Accept:application/json' ));
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+  curl_setopt($ch, CURLOPT_HEADER, 0);
+  $json_cidades = curl_exec($ch);
+  $json_cidades = json_decode($json_cidades, 1);
+  var_dump($json_cidades[5000]['nome']);
+  die();
+  } */
 
-function validarUfCidade($uf, $cidade) {
+function validarUF($uf, $cidade) {
     $uf_id = 0;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://servicodados.ibge.gov.br/api/v1/localidades/estados");
@@ -207,6 +220,8 @@ function validarUfCidade($uf, $cidade) {
     $json_city = json_decode($json_city, 1);
     foreach ($json_city as $value) {
         if ($cidade == $value['nome']) {
+            var_dump($value['nome']);
+            die();
             return true;
         }
     }

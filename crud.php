@@ -4,19 +4,19 @@
     function salvar($prod, $foto, $quant, $price, $custo, $desc, $rev) {
         $link = abreConexao();
 
-        $query = "insert into tb_produtos(produto, foto, quantidade, preco, custo, descricao, review) values ('$prod', '$foto', '$quant', '$price', '$custo', '$desc', '$rev')";
+        $query = "insert into tb_produto(cod_ref, nome_produto, quant, preco_venda, descr_resumido, descr_completo, altura, largura, comprimento, diametro, peso) values ('$cod','$prod', '$quant', '$price', '$desc', '$rev', '$alt', '$larg', '$comp', '$diam', '$peso')";
         if(mysqli_query($link, $query)) {
-            return true;            
+            return true;
         }
-        
+
         return false;
-        
-    }  
-    
+
+    }
+
      function buscar($prod) {
         $link = abreConexao();
 
-        
+
         $query = "select * from tb_produtos where produto like '%$prod%'";
 
         $result = mysqli_query($link, $query);
@@ -26,14 +26,14 @@
         while($produto = mysqli_fetch_row($result)) {
             array_push($arrayProduto, $produto);
         }
-       
+
         return $arrayProduto;
-    }   
+    }
 
     function buscarId($id) {
         $link = abreConexao();
 
-        
+
         $query = "select * from tb_produtos where id = $id";
 
         $result = mysqli_query($link, $query);
@@ -43,32 +43,32 @@
         }
         return mysqli_fetch_assoc($result);
     }
-    
-    
-    
+
+
+
     function atualizar($prod, $foto, $quant, $price, $custo, $desc, $rev, $id) {
         $link = abreConexao();
 
-        $query = "update tb_produtos 
+        $query = "update tb_produtos
                     set produto = '$prod', foto = '$foto', quantidade = '$quant', preco = '$price', custo = '$custo', descricao = '$desc', review = '$rev'"
-                . " where id='$id'"; 
-                    
+                . " where id='$id'";
+
 
                 if(mysqli_query($link, $query)) {
-                    return true;            
+                    return true;
                 }
-                
+
                 return false;
-                
-    } 
+
+    }
 
     function efetuarLogin($login, $senha){
         $link = abreConexao();
 
         $query = "select nome from tb_admins where login = '$login' and senha = '$senha'";
         $result = mysqli_query($link, $query);
-        
+
         $result = mysqli_fetch_assoc($result);
-        
+
         return $result;
     }
